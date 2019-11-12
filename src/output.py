@@ -1,7 +1,5 @@
 class Color:
-    """
-    An utility class to store the color flags to print to console.
-    """
+
     BLACK = ''
     PURPLE = '\033[95m'
     CYAN = '\033[96m'
@@ -15,13 +13,7 @@ class Color:
     END = '\033[0m'
 
     def parse(self, text, color, bold):
-        """
-        Returns a formatted string ready to be printed to console
-        :param text: Text to print
-        :param color: Color to use
-        :param bold: If the text should be bold
-        :return: The formatted string
-        """
+    
         if bold:
             color = color + self.BOLD
         color = color + self.BOLD if bold else color
@@ -29,11 +21,7 @@ class Color:
 
 
 def print_results(results):
-    """
-    Helper function used to print the generated results to the console in a colored
-    :param results: a dictionary of analysis results
-    :return: None
-    """
+
     print()
     for key, dictionary in results.items():
         print(Color().parse(key, Color.RED, True))

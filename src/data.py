@@ -1,7 +1,7 @@
 from src.clean import load_database
 
 def _to_column_dict(database, column):
-    return database.sort_values(column, ascending=False).head(10).set_index('Title')[column].apply(lambda x: "$ {}".format(round(x,2))).to_dict()
+    return database.sort_values(column, ascending=False).head(10).set_index('Title')[column].to_dict()
 
 
 def get_film_data():
