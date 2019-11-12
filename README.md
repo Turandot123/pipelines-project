@@ -21,15 +21,19 @@ ORGANISATION OF FILES
 
 Files are organised as follow:
 
-Input - were two initial CSV files are hosted IMBd and movie producers that will be manipulated to obtain a clean and transform database 
-Output - clean and transformed database called database, the result of the work of manipulating CSV files and perform web scraping 
+Input - wehre two initial CSV files are hosted IMBd and movie producers, which will be manipulated to obtain a clean and transform database 
+called database and hosted in folder Output, which is the result of the work of manipulating CSV files and perform web scraping 
+
 SRC- a series of .py files where python functions have been coded which serve for various tasks such as:
 a) clean IMBd and movie producers CSV files
 b) scrap (called api) two websites https://www.filmsite.org/bestdirs2.html and https://www.today.com/popculture/complete-list-every-best-picture-oscar-winner-ever-t107617
 c) get the relevant information (queries) from the database
 d) check if the user has introduced the right flag and has petioned the information from right period
 e) obtain and store the database in CSV and call it and pass it to json and transform it into a panda dataframe 
+
 Main.PY - were the ARGPARSE and PIPELINE are coded
+
+README - Instructions
 
 WORK PERFORMED 
 
