@@ -22,10 +22,7 @@ def _parse_oscar_winner_film(text):
 
 
 def _add_director(directors, director):
-    """
-    Check if the director is already in the dataframe. If it is there, it increments the number of the oscars values
-    (for example, if it has a value of 2, it sets a 3). If it's not, it creates the row and fixes the value as 1.
-    """
+
     
     if directors.loc[directors['Director'] == director].empty:
         directors.loc[len(directors)] = [director, 1]
@@ -36,9 +33,7 @@ def _add_director(directors, director):
 
 
 def get_oscar_winner_films():
-    """
-    Extracts the oscar winning films from today.com
-    """
+ 
     soup = _get_soup('https://www.today.com/popculture/complete-list-every-best-picture-oscar-winner-ever-t107617')
     film_list = pd.DataFrame(columns=['Title', 'Oscar Year'])
     uls = soup.findAll('ul', {'class': ''})
@@ -50,9 +45,7 @@ def get_oscar_winner_films():
 
 
 def get_oscar_winner_directors():
-    """
-    Extracts the directors that have won an Oscar from the filmsite.org site.
-    """
+
     soup = _get_soup('https://www.filmsite.org/bestdirs2.html')
     table = soup.find('table', {'width': '75%'})
     trs = table.findAll('tr', recursive=False)[1:]
